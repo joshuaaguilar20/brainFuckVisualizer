@@ -10,14 +10,12 @@ class StreamShow extends React.Component {
   };
 
   componentDidUpdate(prevProps) {
-    //Logs Previous Props In state 
     if (prevProps) {
-      this.prevState = { ...prevProps }
-      this.prevState['historyPresent'] = true
-      console.log('this is my history');
-      console.log(this.prevState.script);
+      this.prevState = { ...prevProps };
+      this.prevState['historyPresent'] = true;
     }
   };
+
 
 
 
