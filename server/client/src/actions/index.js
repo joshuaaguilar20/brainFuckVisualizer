@@ -15,13 +15,12 @@ export const createStream = formValues => async dispatch => {
 
 export const nextStep = scriptData => async dispatch => {
   const response = await streams.post(`/brainfuck/${scriptData.id}/step`, { ...scriptData });
-  console.log(response.data);
   dispatch({ type: SEND_BFSCRIPT, payload: response.data });
 
 };
 
 export const savePrevState = prevState => async dispatch => {
-  console.log(prevState.script)
-  dispatch({ type: SEND_BFSCRIPT, payload: prevState.script });
+  console.log(prevState);
+  dispatch({ type: PREVIOUS_STATE, payload: prevState });
 };
 
