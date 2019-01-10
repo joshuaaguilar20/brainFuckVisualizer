@@ -1,5 +1,6 @@
 import streams from '../apis/streams';
 import history from '../history';
+
 import {
   SEND_BFSCRIPT,
   PREVIOUS_STATE,
@@ -15,12 +16,26 @@ export const sendScript = formValues => async dispatch => {
 
 export const nextStep = scriptData => async dispatch => {
   const response = await streams.post(`/brainfuck/${scriptData.id}/step`, { ...scriptData });
-  dispatch({ type: SEND_BFSCRIPT, payload: response.data });
-  console.log(response.data);
+  if (!response.data.done) {
+    dispatch({ type: SEND_BFSCRIPT, payload: response.data })
+  }
 };
 
 export const savePrevState = prevState => async dispatch => {
   console.log(prevState);
   dispatch({ type: PREVIOUS_STATE, payload: prevState });
 };
+
+export const finalStep = scriptData => async dispatch => {
+  const response = await streams.post(`/brainfuck/${scriptData.id}/step`, { ...scriptData });
+  if (!response.data.done) {
+    dispatch({ type: SEND_BFSCRIPT, payload: response.data })
+    dispatch(finalStep(response.data))
+  } else
+    return console.log('done');
+};
+
+
+
+
 

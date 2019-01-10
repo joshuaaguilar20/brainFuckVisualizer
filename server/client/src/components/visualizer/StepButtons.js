@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { nextStep, savePrevState } from "../../actions"
+import { nextStep, savePrevState, finalStep } from "../../actions"
 import _ from 'lodash';
 
 export class StepButtons extends React.Component {
@@ -25,13 +25,15 @@ export class StepButtons extends React.Component {
         script['count'] = steps
         nextStep(script)
     }
-    finalStepFunction = () => {
+    finalStepFunction = async () => {
         //Steps to the end of the script
-        const { nextStep, script } = this.props
-        script.script.forEach(step => {
-            nextStep(script)
-        });
-    };
+        const { finalStep, script } = this.props
+        finalStep(script);
+    }
+
+
+
+
 
     prevStateFunction = () => {
         //grabs previous state from array and updates it to current
@@ -61,7 +63,7 @@ const mapStateToProps = (state) => {
 
 export default connect(
     mapStateToProps,
-    { nextStep, savePrevState }
+    { nextStep, savePrevState, finalStep }
 )(StepButtons);
 
 
