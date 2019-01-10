@@ -8,12 +8,13 @@ import { Link } from 'react-router-dom';
 
 
 
-class StreamShow extends React.Component {
+
+class RenderOutput extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  renderLists(script) {
+  renderScriptData(script) {
     if (!script.script) {
       return (<div>
         <h3>Must have vaild input to visualize </h3>
@@ -38,7 +39,7 @@ class StreamShow extends React.Component {
     return (
       <div>
         <h2>Visualizer</h2>
-        <div className="ui table">{this.renderLists(script)}</div>
+        <div className="ui table">{this.renderScriptData(script)}</div>
       </div>
     );
   }
@@ -54,4 +55,4 @@ const mapStateToProps = (state) => {
 export default connect(
   mapStateToProps,
   { nextStep, savePrevState }
-)(StreamShow);
+)(RenderOutput);

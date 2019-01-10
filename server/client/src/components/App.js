@@ -1,9 +1,10 @@
 import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
-import StreamCreate from './visualizer/StreamCreate';
-import StreamShow from './visualizer/StreamShow';
+import StreamShow from './visualizer/RenderOutput';
 import Header from './Header';
 import history from '../history';
+import RenderInput from './visualizer/RenderInput';
+import RenderOutput from './visualizer/RenderOutput';
 
 const App = () => {
   return (
@@ -12,8 +13,8 @@ const App = () => {
         <div>
           <Header />
           <Switch>
-            <Route path="/" exact component={StreamCreate} />
-            <Route path="/visualize" exact component={StreamShow} />
+            <Route path="/" exact component={RenderInput} />
+            <Route path="/visualize" exact component={RenderOutput} />
           </Switch>
         </div>
       </Router>

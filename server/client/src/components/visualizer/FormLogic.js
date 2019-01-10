@@ -1,7 +1,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 
-class StreamForm extends React.Component {
+class FormLogic extends React.Component {
   //Renders error if user selects input and does not enter text to submit
   renderError({ error, touched }) {
     if (touched && error) {
@@ -56,6 +56,6 @@ const validate = formValues => {
 };
 
 export default reduxForm({
-  form: 'streamForm',
+  form: 'formLogic',
   validate
-})(StreamForm);
+})(FormLogic);
