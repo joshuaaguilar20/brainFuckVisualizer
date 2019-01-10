@@ -6,5 +6,4 @@ import streamReducer from './streamReducer';
 export default combineReducers({
   form: formReducer,
   script: streamReducer,
-  // prevState: historyReducer
 });

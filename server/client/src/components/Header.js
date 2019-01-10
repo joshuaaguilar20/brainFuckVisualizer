@@ -10,7 +10,7 @@ const Header = () => {
       </Link>
       <div className="right menu">
         <Link to="/" className="item">
-          Kurena HealthCare
+          Karuna HealthCare
         </Link>
       </div>
     </div>

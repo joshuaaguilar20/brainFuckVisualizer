@@ -1,7 +1,7 @@
 import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
-import StreamCreate from './streams/StreamCreate';
-import StreamShow from './streams/StreamShow';
+import StreamCreate from './visualizer/StreamCreate';
+import StreamShow from './visualizer/StreamShow';
 import Header from './Header';
 import history from '../history';
 

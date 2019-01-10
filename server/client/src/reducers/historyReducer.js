@@ -1,9 +1,5 @@
 
-import {
-  PREVIOUS_STATE
-} from '../actions/types';
-
-
+import { PREVIOUS_STATE } from '../actions/types';
 
 export default (state = [], action) => {
   switch (action.type) {
