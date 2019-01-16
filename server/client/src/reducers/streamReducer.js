@@ -1,7 +1,8 @@
-import _ from 'lodash';
+
 import {
   SEND_BFSCRIPT,
-  PREVIOUS_STATE
+  PREVIOUS_STATE,
+  TEST_ACTION
 } from '../actions/types';
 
 export default (state = {}, action) => {
@@ -10,6 +11,12 @@ export default (state = {}, action) => {
       return { ...state, ...action.payload };
     case PREVIOUS_STATE:
       return { ...state, ...action.payload };
+    case TEST_ACTION:
+      return {
+        ...state["testItem"] = action.payload.script.map((data) => {
+          return data[0];
+        })
+      };
     default:
       return state;
   }

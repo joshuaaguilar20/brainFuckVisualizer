@@ -28,7 +28,6 @@ class FormLogic extends React.Component {
   };
   //onsubmit function passed to handleSubmit
   onSubmit = formValues => {
-    console.log(this.props.onSubmit)
     this.props.onSubmit(formValues);
   };
 

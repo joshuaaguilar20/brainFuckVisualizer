@@ -10,10 +10,6 @@ import { Link } from 'react-router-dom';
 
 
 class RenderOutput extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   renderScriptData(script) {
     if (!script.script) {
       return (<div>
@@ -24,7 +20,7 @@ class RenderOutput extends React.Component {
       </div>)
     }
     return (
-      <div className="content">
+      <div style={{ overflow: "scroll" }}>
         <Script script={script} />
         <h4> Step Number {script.instruction_pointer}</h4>
         <Memory script={script} />

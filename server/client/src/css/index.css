@@ -1,0 +1,18 @@
+table {
+    word-break: break-word;
+}
+
+@media screen and (max-width: 992px) {
+    #script{
+    overflow:scroll;
+    width:700px;
+  }
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+   #script{
+    overflow:scroll;
+    width:400px;
+  }
+}
