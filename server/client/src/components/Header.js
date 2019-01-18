@@ -9,9 +9,9 @@ const Header = () => {
         Brainfuck Interpreter
       </Link>
       <div className="right menu">
-        <Link to="/" className="item">
+        <a href="https://www.meetkaruna.com/" className="item">
           Karuna HealthCare
-        </Link>
+        </a>
       </div>
     </div>
   );

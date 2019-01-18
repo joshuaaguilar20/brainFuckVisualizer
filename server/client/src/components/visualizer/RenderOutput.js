@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 
 
 class RenderOutput extends React.Component {
+
   renderScriptData(script) {
     if (!script.script) {
       return (<div>
@@ -22,10 +23,13 @@ class RenderOutput extends React.Component {
     return (
       <div style={{ overflow: "scroll" }}>
         <Script script={script} />
-        <h4> Step Number {script.instruction_pointer}</h4>
+        <h5> Step Number {script.instruction_pointer}</h5>
         <Memory script={script} />
         <h4 className="positive">Output {script.output}</h4>
         <StepButtons />
+        <button className="ui button" style={{ margin: "10px" }} ><Link to="/" className="item">
+          Restart Visualizer
+             </Link></button>
       </div>
     );
   };

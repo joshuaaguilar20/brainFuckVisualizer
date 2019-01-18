@@ -16,9 +16,9 @@ export const sendScript = formValues => async dispatch => {
 
 export const nextStep = scriptData => async dispatch => {
   const response = await streams.post(`/brainfuck/${scriptData.id}/step`, { ...scriptData });
-  if (!response.data.done) {
-    dispatch({ type: SEND_BFSCRIPT, payload: response.data })
-  }
+  // if (!response.data.done) {
+  dispatch({ type: SEND_BFSCRIPT, payload: response.data })
+  // }
 };
 
 export const savePrevState = prevState => async dispatch => {
@@ -28,12 +28,14 @@ export const savePrevState = prevState => async dispatch => {
 
 export const finalStep = scriptData => async dispatch => {
   const response = await streams.post(`/brainfuck/${scriptData.id}/step`, { ...scriptData });
-  if (!response.data.done) {
+  if (!scriptData.done) {
     dispatch({ type: SEND_BFSCRIPT, payload: response.data })
     dispatch(finalStep(response.data))
-  } else
-    return console.log('done');
+  }
 };
+
+
+
 
 
 

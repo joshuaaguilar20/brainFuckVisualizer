@@ -20,7 +20,7 @@ export const Script = ({ script }) => {
             <p>
 
                 {script.script.map((item, index) => {
-                    return (index == script.instruction_pointer) ?
+                    return (index + 1 == script.instruction_pointer) ?
                         <span style={style} key={index}>{item}</span>
                         : <span style={notCurrentScript} key={index}>{item}</span>
                 })}
