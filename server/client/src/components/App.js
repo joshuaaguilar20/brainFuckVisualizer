@@ -4,6 +4,7 @@ import Header from './Header';
 import history from '../history';
 import RenderInput from './visualizer/RenderInput';
 import RenderOutput from './visualizer/RenderOutput';
+import QuickReference from './QuickReference';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
             <Route path="/" exact component={RenderInput} />
             <Route path="/visualize" exact component={RenderOutput} />
           </Switch>
+          <QuickReference />
         </div>
       </Router>
     </div>
