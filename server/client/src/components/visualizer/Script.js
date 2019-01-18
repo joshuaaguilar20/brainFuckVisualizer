@@ -18,7 +18,6 @@ export const Script = ({ script }) => {
     return (
         <div id='script' className="ui container">
             <p>
-
                 {script.script.map((item, index) => {
                     return (index + 1 == script.instruction_pointer) ?
                         <span style={style} key={index}>{item}</span>
