@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { nextStep, savePrevState, finalStep } from "../../actions"
 import _ from 'lodash';
-import { Link } from 'react-router-dom';
+
 
 export class StepButtons extends React.Component {
     constructor(props) {
@@ -19,6 +19,7 @@ export class StepButtons extends React.Component {
             prevState = prevProps.script
             prevState.data = _.compact(prevState.data);
             this.prevStateArray.push(prevState);
+            //removes any duplicate values in arr
             this.prevStateArray = this.prevStateArray.reduce((unique, o) => {
                 if (!unique.some(obj => obj.instruction_pointer === o.instruction_pointer && obj.value === o.value)) {
                     unique.push(o);

@@ -11,7 +11,7 @@ const style = {
 const notCurrentScript = {
     fontSize: "20px"
 }
-// style = {{ overflow: "scroll", width: "500px" }}
+
 
 
 export const Script = ({ script }) => {
@@ -30,20 +30,3 @@ export const Script = ({ script }) => {
 };
 
 
-// return (
-//     <div id='container' style={{ overflow: "scroll", width: "1000px" }}>
-//         <table>
-//             <tbody>
-//                 <tr>
-
-//                     {script.script.map((item, index) => {
-//                         return (index == script.instruction_pointer) ?
-//                             <td className="negative" key={index}>{item}</td>
-//                             : <td key={index}>{item}</td>
-//                     })}
-//                 </tr>
-//             </tbody>
-//         </table>
-//     </div >
-// )
-// }
